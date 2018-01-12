@@ -47,8 +47,7 @@ internal val EDIT_COUPONS_ENDPOINT          = "https://plugin.buycraft4j.net/cou
 internal val BANS_ENDPOINT                  = "https://plugin.buycraft4j.net/bans"
 
 internal fun <T> sendRequest(url: String, method: HttpMethod, headers: HttpHeaders, clazz: Class<T>, body: Any? = null): T {
-    val entity = if (body == null) HttpEntity<String>(headers) else HttpEntity(body)
-    
+    val entity = if (body == null) HttpEntity<String>(headers) else HttpEntity(body, headers)
     try {
         return restTemplate.exchange<T>(url, method, entity, clazz).body!!
     }
