@@ -20,19 +20,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.bergwerklabs.buycraft
+package de.bergwerklabs.buycraft4j.wrapper.command
 
-import com.fasterxml.jackson.annotation.JsonProperty
-import java.lang.Exception
+import de.bergwerklabs.buycraft4j.wrapper.Player
 
 /**
- * Created by Yannic Rieger on 12.01.2018.
+ * Created by Yannic Rieger on 10.01.2018.
  *
- * Exception for Buycraft specific error messages.
+ * Represents a command that should be executed in Minecraft. Wraps Command JSON object.
  *
  * @author Yannic Rieger
  */
-class BuycraftException(
-        @JsonProperty("error_code")    errorCode: Int,
-        @JsonProperty("error_message") message: String
-) : Exception("Code: $errorCode, $message")
+data class Command(val id: Int, val command: String, val payment: Int, val conditions: Conditions, val player: Player)

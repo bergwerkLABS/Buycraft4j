@@ -20,15 +20,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.bergwerklabs.buycraft.wrapper.command
+package de.bergwerklabs.buycraft4j.wrapper.command
 
-import de.bergwerklabs.buycraft.wrapper.Player
+import de.bergwerklabs.buycraft4j.wrapper.Meta
+import java.util.*
 
 /**
  * Created by Yannic Rieger on 10.01.2018.
  *
- * Represents a command that should be executed in Minecraft. Wraps Command JSON object.
+ * List of commands to be executed.
  *
  * @author Yannic Rieger
  */
-data class Command(val id: Int, val command: String, val payment: Int, val conditions: Conditions, val player: Player)
+data class CommandList(val meta: Meta, val commands: Array<Command>) {
+    
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        
+        other as CommandList
+        
+        if (meta != other.meta) return false
+        if (!Arrays.equals(commands, other.commands)) return false
+        
+        return true
+    }
+    
+    override fun hashCode() = Objects.hash(this.meta, *this.commands)
+}

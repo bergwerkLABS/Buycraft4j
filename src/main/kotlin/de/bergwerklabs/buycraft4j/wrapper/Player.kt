@@ -20,7 +20,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.bergwerklabs.buycraft.wrapper
+package de.bergwerklabs.buycraft4j.wrapper
 
 /**
  * Created by Yannic Rieger on 10.01.2018.

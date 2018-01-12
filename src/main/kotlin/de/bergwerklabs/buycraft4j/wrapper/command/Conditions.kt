@@ -20,31 +20,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.bergwerklabs.buycraft.wrapper.command
-
-import de.bergwerklabs.buycraft.wrapper.Meta
-import java.util.*
+package de.bergwerklabs.buycraft4j.wrapper.command
 
 /**
  * Created by Yannic Rieger on 10.01.2018.
  *
- * List of commands to be executed.
+ * Conditions for commands to be executed. Wraps Conditions JSON object.
  *
  * @author Yannic Rieger
  */
-data class CommandList(val meta: Meta, val commands: Array<Command>) {
-    
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-        
-        other as CommandList
-        
-        if (meta != other.meta) return false
-        if (!Arrays.equals(commands, other.commands)) return false
-        
-        return true
-    }
-    
-    override fun hashCode() = Objects.hash(this.meta, *this.commands)
-}
+data class Conditions(val delay: String)

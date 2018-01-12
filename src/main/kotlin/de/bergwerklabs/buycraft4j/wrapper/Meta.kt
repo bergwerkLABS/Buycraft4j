@@ -20,13 +20,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.bergwerklabs.buycraft.wrapper.command
+package de.bergwerklabs.buycraft4j.wrapper
 
 /**
  * Created by Yannic Rieger on 10.01.2018.
  *
- * Conditions for commands to be executed. Wraps Conditions JSON object.
+ * Represents request metadata and wraps the Meta JSON object.
  *
  * @author Yannic Rieger
  */
-data class Conditions(val delay: String)
+data class Meta(val limited: Boolean)
