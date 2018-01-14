@@ -23,6 +23,7 @@
 package de.bergwerklabs.buycraft4j
 
 import de.bergwerklabs.buycraft4j.wrapper.command.OfflineCommandList
+import de.bergwerklabs.buycraft4j.wrapper.command.OnlineCommandList
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpMethod
 import org.springframework.http.MediaType
@@ -65,7 +66,7 @@ class BuycraftClient(private val secret: String) {
      * Get the offline commands which are due to be executed.
      * These commands should be executed immediately and no checks are required against the related players.
      */
-    fun getOfflineCommands(): OfflineCommandList? {
+    fun getOfflineCommands(): OfflineCommandList {
         return sendRequest(OFFLINE_COMMANDS_ENDPOINT, HttpMethod.GET, this.header, OfflineCommandList::class.java)
     }
     
@@ -74,7 +75,7 @@ class BuycraftClient(private val secret: String) {
      * These commands should only be executed when the player is online and all
      * conditions have been met (such as if the player has the required amount of inventory slots).
      */
-    fun getOnlineCommands() {
+    fun getOnlineCommands(): OnlineCommandList {
     
     }
     
@@ -82,7 +83,7 @@ class BuycraftClient(private val secret: String) {
      * Delete one or more commands which have been executed on the Minecraft Server.
      * An empty response consisting of a 204 No Content status code will be returned on completion.
      */
-    fun deleteCommand() {
+    fun deleteCommand(vararg ids: Int) {
     
     }
     
