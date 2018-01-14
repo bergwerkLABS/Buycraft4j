@@ -22,7 +22,7 @@
  */
 package de.bergwerklabs.buycraft4j
 
-import de.bergwerklabs.buycraft4j.wrapper.command.CommandList
+import de.bergwerklabs.buycraft4j.wrapper.command.OfflineCommandList
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpMethod
 import org.springframework.http.MediaType
@@ -32,7 +32,7 @@ import org.springframework.http.MediaType
  *
  * Class providing easy access to the Buycraft REST API.
  *
- * @param secret
+ * @param secret Buycraft shop secret
  * @author Yannic Rieger
  */
 class BuycraftClient(private val secret: String) {
@@ -65,8 +65,8 @@ class BuycraftClient(private val secret: String) {
      * Get the offline commands which are due to be executed.
      * These commands should be executed immediately and no checks are required against the related players.
      */
-    fun getOfflineCommands(): CommandList? {
-        return sendRequest(OFFLINE_COMMANDS_ENDPOINT, HttpMethod.GET, this.header, CommandList::class.java)
+    fun getOfflineCommands(): OfflineCommandList? {
+        return sendRequest(OFFLINE_COMMANDS_ENDPOINT, HttpMethod.GET, this.header, OfflineCommandList::class.java)
     }
     
     /**

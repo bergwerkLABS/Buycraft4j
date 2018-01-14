@@ -29,4 +29,4 @@ package de.bergwerklabs.buycraft4j.wrapper.command
  *
  * @author Yannic Rieger
  */
-data class Conditions(val delay: String)
+data class Conditions(val delay: String, val slot: Int = -1)

@@ -46,6 +46,16 @@ internal val COUPONS_ENDPOINT               = "https://plugin.buycraft4j.net/cou
 internal val EDIT_COUPONS_ENDPOINT          = "https://plugin.buycraft4j.net/coupons/{id}"
 internal val BANS_ENDPOINT                  = "https://plugin.buycraft4j.net/bans"
 
+/**
+ *
+ *
+ * @param url
+ * @param method
+ * @param headers
+ * @param clazz
+ * @param body
+ * @return
+ */
 internal fun <T> sendRequest(url: String, method: HttpMethod, headers: HttpHeaders, clazz: Class<T>, body: Any? = null): T {
     val entity = if (body == null) HttpEntity<String>(headers) else HttpEntity(body, headers)
     try {

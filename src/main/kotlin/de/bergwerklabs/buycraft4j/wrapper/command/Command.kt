@@ -23,6 +23,7 @@
 package de.bergwerklabs.buycraft4j.wrapper.command
 
 import de.bergwerklabs.buycraft4j.wrapper.Player
+import de.bergwerklabs.buycraft4j.wrapper.command.Conditions
 
 /**
  * Created by Yannic Rieger on 10.01.2018.
@@ -31,4 +32,10 @@ import de.bergwerklabs.buycraft4j.wrapper.Player
  *
  * @author Yannic Rieger
  */
-data class Command(val id: Int, val command: String, val payment: Int, val conditions: Conditions, val player: Player)
+class Command(val id:         Int,
+              val command:    String,
+              val payment:    Int,
+              val conditions: Conditions,
+              // Make optional so we don't have to create 2 subclasses
+              val player:     Player = Player(-1, "null", "null")
+)

@@ -20,13 +20,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package de.bergwerklabs.buycraft4j.wrapper
+package de.bergwerklabs.buycraft4j.wrapper.command
 
 /**
  * Created by Yannic Rieger on 10.01.2018.
  *
- * Represents request metadata and wraps the Meta JSON object.
+ * Represents request metadata and wraps the OfflineCommandMeta JSON object.
  *
  * @author Yannic Rieger
  */
-data class Meta(val limited: Boolean)
+data class OfflineCommandMeta(val limited: Boolean)

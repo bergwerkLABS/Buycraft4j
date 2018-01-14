@@ -22,23 +22,22 @@
  */
 package de.bergwerklabs.buycraft4j.wrapper.command
 
-import de.bergwerklabs.buycraft4j.wrapper.Meta
 import java.util.*
 
 /**
  * Created by Yannic Rieger on 10.01.2018.
  *
- * List of commands to be executed.
+ * List of offline commands to be executed.
  *
  * @author Yannic Rieger
  */
-data class CommandList(val meta: Meta, val commands: Array<Command>) {
+data class OfflineCommandList(val meta: OfflineCommandMeta, val commands: Array<Command>) {
     
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
         
-        other as CommandList
+        other as OfflineCommandList
         
         if (meta != other.meta) return false
         if (!Arrays.equals(commands, other.commands)) return false
