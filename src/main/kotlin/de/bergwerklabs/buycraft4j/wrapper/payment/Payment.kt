@@ -1,5 +1,6 @@
-package de.bergwerklabs.buycraft4j.wrapper
+package de.bergwerklabs.buycraft4j.wrapper.payment
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.util.*
 
 /**
@@ -7,7 +8,7 @@ import java.util.*
  * <p>
  * @author Yannic Rieger
  */
-data class Payment(@JsonProperty("ign") val userName: String, val price: Int, val packages: Array<Package>) {
+data class Payment(@JsonProperty("ign") val userName: String, val price: Int, val packages: Array<PaymentPackage>) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

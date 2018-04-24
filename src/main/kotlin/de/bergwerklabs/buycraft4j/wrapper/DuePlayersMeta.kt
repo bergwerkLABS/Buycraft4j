@@ -1,5 +1,7 @@
 package de.bergwerklabs.buycraft4j.wrapper
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 /**
  * Created by Yannic Rieger on 14.01.2018.
  *
