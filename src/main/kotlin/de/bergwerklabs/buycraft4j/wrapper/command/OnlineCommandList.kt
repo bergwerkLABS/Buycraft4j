@@ -8,17 +8,17 @@ import java.util.*
  * @author Yannic Rieger
  */
 data class OnlineCommandList(val commands: Array<Command>) {
-    
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
-        
+
         other as OnlineCommandList
-        
+
         if (!Arrays.equals(commands, other.commands)) return false
-        
+
         return true
     }
-    
-    override fun hashCode() =  Arrays.hashCode(commands)
+
+    override fun hashCode() = Arrays.hashCode(commands)
 }

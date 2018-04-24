@@ -1,7 +1,5 @@
 package de.bergwerklabs.buycraft4j.wrapper
 
-import com.fasterxml.jackson.annotation.JsonProperty
-
 /**
  * Created by Yannic Rieger on 14.01.2018.
  *
@@ -11,6 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty
  */
 data class DuePlayersMeta(
         @JsonProperty("execute_offline") val executeOffline: Boolean,
-        @JsonProperty("next_check")      val nextCheck:      Int,
-                                               val more:           Boolean
+        @JsonProperty("next_check") val nextCheck: Int,
+        val more: Boolean
 )
